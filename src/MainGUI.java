@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.event.*;
 
 public class MainGUI {
     private JTabbedPane tabbedPane2;
@@ -14,4 +15,14 @@ public class MainGUI {
     private JButton depositToChqAcctButton;
     private JButton depositToSavingsAcctButton;
     private JTabbedPane tabbedPane3;
+
+    public MainGUI() {
+        searchButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "Test");
+                System.out.println("Search Btn");
+            }
+        });
+    }
 }

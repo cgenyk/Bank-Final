@@ -10,9 +10,7 @@ public class MainGUI {
     private JTextArea DisplayBalance;
     private JPasswordField passwordField1;
     private JButton searchButton;
-
-    private JTextField textField1;{
-    }
+    private JTextField textField1;
     private JButton depositToChqAcctButton;
     private JButton depositToSavingsAcctButton;
     private JTabbedPane tabbedPane3;

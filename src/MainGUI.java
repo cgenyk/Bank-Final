@@ -9,9 +9,8 @@ public class MainGUI {
     private JTextArea DisplayName;
     private JTextArea DisplayBalance;
     private JPasswordField passwordField1;
-    private JButton searchButton;{
-        JOptionPane.showMessageDialog(null, "Test");
-    }
+    private JButton searchButton;
+
     private JTextField textField1;{
     }
     private JButton depositToChqAcctButton;

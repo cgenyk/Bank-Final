@@ -4,7 +4,8 @@ public class userinterface {
     public static void main(String[] args) {
 
         JFrame frame = new JFrame("<class name>");
-      frame.setContentPane(new MainGUI().panel1);
+        frame.setContentPane(new Auth().panel1);
+
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);

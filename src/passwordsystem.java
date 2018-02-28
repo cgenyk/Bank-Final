@@ -9,6 +9,7 @@ public class passwordsystem {
             found = false;
         } else {
             found = Arrays.equals (entry, login);
+
         }
 
         return found;

@@ -35,7 +35,7 @@ public class MainGUI {
                     Adr.setText(accountmanager.getadr());
                     Contact.setText(accountmanager.getcontact());
                     Notes.setText(accountmanager.nad());
-                    System.out.println(moneymanager.DEPOSITCHQ());
+                  //  System.out.println(moneymanager.DEPOSITCHQ());
                 } else {
                     java.awt.Toolkit.getDefaultToolkit().beep();
                     JOptionPane.showMessageDialog(null, "Error \n No Record Found." ,"Bank System", JOptionPane.ERROR_MESSAGE);

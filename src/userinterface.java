@@ -2,8 +2,7 @@ import javax.swing.*;
 
 public class userinterface {
     public static void main(String[] args) {
-
-        JFrame frame = new JFrame("<class name>");
+        JFrame frame = new JFrame("Banking System | Log In ");
         frame.setContentPane(new Auth().panel1);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

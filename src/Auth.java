@@ -15,11 +15,13 @@ public class Auth {
                 char[] entry = passwordField1.getPassword();
                 if (passwordsystem.login(entry)) {
 
-                    JFrame frame = new JFrame("<class name>");
+                    JFrame frame = new JFrame("Banking System | Main UI");
                     frame.setContentPane(new MainGUI().panel1);
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.pack();
                     frame.setVisible(true);
+                    ImageIcon pic = new ImageIcon("/Users/connorgenyk/IdeaProjects/Bank-Final/.idea/AppResources/bank-building.png");
+                    panel1.add(new JLabel(pic));
 
 
 

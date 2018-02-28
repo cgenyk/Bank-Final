@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 
 public class MainGUI {
@@ -19,8 +20,12 @@ public class MainGUI {
     private JTextArea Adr;
     private JTextArea Contact;
     private JTextArea Notes;
+    private JPanel MAIN;
 
     public MainGUI() {
+
+        panel1.setSize(1024, 1024 );
+
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -47,12 +52,16 @@ public class MainGUI {
     }
 
     public void setData(userinterface data) {
+        panel1.setSize(1024, 1024 );
     }
 
     public void getData(userinterface data) {
+
     }
 
     public boolean isModified(userinterface data) {
         return false;
     }
+
+
 }

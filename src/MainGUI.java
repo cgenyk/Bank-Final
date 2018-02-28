@@ -15,14 +15,44 @@ public class MainGUI {
     private JButton depositToChqAcctButton;
     private JButton depositToSavingsAcctButton;
     private JTabbedPane tabbedPane3;
+    public JPanel panel1;
+    private JTextArea Adr;
+    private JTextArea Contact;
+    private JTextArea Notes;
 
     public MainGUI() {
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Test");
-                System.out.println("Search Btn");
+                String accountnumber = passwordField1.getText();
+                int searchnum = Integer.parseInt(accountnumber);
+                char[] input = passwordField1.getPassword();
+                if (accountmanager.ACN(input)) {
+                    JOptionPane.showMessageDialog(null, "Successes \n Record Found." ,"Bank System", JOptionPane.INFORMATION_MESSAGE);
+                    System.out.println("Search Btn" + accountnumber);
+                    DisplayAcN.setText("Account Number:" + "\n" + accountnumber);
+                    DisplayName.setText(accountmanager.getname());
+                    Adr.setText(accountmanager.getadr());
+                    Contact.setText(accountmanager.getcontact());
+                    Notes.setText(accountmanager.nad());
+                    System.out.println(moneymanager.DEPOSITCHQ());
+                } else {
+                    java.awt.Toolkit.getDefaultToolkit().beep();
+                    JOptionPane.showMessageDialog(null, "Error \n No Record Found." ,"Bank System", JOptionPane.ERROR_MESSAGE);
+                }
+
+
             }
         });
+    }
+
+    public void setData(userinterface data) {
+    }
+
+    public void getData(userinterface data) {
+    }
+
+    public boolean isModified(userinterface data) {
+        return false;
     }
 }

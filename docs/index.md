@@ -8,6 +8,6 @@ Assignment 4 was developed by Connor Genyk for Assignment 4 in Computer Science 
 # [](#header-1)Important Information:
 * * *
 You will need a defualt password to use the software, the password is.
----
-password: password
----
+```js
+Password
+```

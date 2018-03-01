@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.FileNotFoundException;
 
 public class MainGUI {
     private JTabbedPane tabbedPane2;
@@ -40,7 +41,7 @@ public class MainGUI {
                     Adr.setText(accountmanager.getadr());
                     Contact.setText(accountmanager.getcontact());
                     Notes.setText(accountmanager.nad());
-                  //  System.out.println(moneymanager.DEPOSITCHQ());
+
                 } else {
                     java.awt.Toolkit.getDefaultToolkit().beep();
                     JOptionPane.showMessageDialog(null, "Error \n No Record Found." ,"Bank System", JOptionPane.ERROR_MESSAGE);

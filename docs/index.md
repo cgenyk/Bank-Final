@@ -1,5 +1,2 @@
----
-layout: default
----
-
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+**Welcome to my GitHub page for Assignment 4**
+* * *

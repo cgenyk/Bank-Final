@@ -7,9 +7,6 @@ public class MainGUI {
     private JTabbedPane tabbedPane1;
     private JTabbedPane tabbedPane4;
     private JTabbedPane tabbedPane5;
-    private JTextArea DisplayAcN;
-    private JTextArea DisplayName;
-    private JTextArea DisplayBalance;
     private JPasswordField passwordField1;
     private JButton searchButton;
     private JTextField textField1;
@@ -17,10 +14,8 @@ public class MainGUI {
     private JButton depositToSavingsAcctButton;
     private JTabbedPane tabbedPane3;
     public JPanel panel1;
-    private JTextArea Adr;
-    private JTextArea Contact;
-    private JTextArea Notes;
     private JPanel MAIN;
+    private JTextPane textPane1;
 
     public MainGUI() {
 
@@ -31,17 +26,18 @@ public class MainGUI {
             public void actionPerformed(ActionEvent e) {
                 String accountnumber = passwordField1.getText();
                 int searchnum = Integer.parseInt(accountnumber);
-                char[] input = passwordField1.getPassword();
                 int n = 0;
-                if (accountnumber.equals("1")) {
-                    JOptionPane.showMessageDialog(null, "Successes \n Record Found." ,"Bank System", JOptionPane.INFORMATION_MESSAGE);
+                System.out.println(searchnum);
+                accountmanager am = accountmanager.accountById(searchnum);
+                String entry = am.toString();
+                textPane1.setText(entry);
 
-
-                } else {
-                    java.awt.Toolkit.getDefaultToolkit().beep();
-
-                }
-
+            }
+        });
+        depositToSavingsAcctButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //accountmanager.accountById(accountmanager.depositSavings);
 
             }
         });

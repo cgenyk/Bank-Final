@@ -1,4 +1,0 @@
-1234 Mr.Freeman,Noah, M,Jr 198 Main ST Winnipeg MB R3R1B5 CAN n.freman@anycorp.com noahfreman@gmail.com (1)-204-154-7589 (1) 204324-3459 EM1 Yes 900.00  Yes  30000.00  Lost Card None None
-6757 Mrs.Doe,Jane,E 123 Any ST Winnipeg MB R3R1B5 CAN n.freman@anycorp.com noahfreman@gmail.com (1)-204-154-7589 (1) 204324-3459 EM1 Yes 900.00  Yes  30000.00  Lost Card None None
-2352 Ms.Jan,Doe,L 198 Main ST Winnipeg MB R3R1B5 CAN n.freman@anycorp.com noahfreman@gmail.com (1)-204-154-7589 (1) 204324-3459 EM1 Yes 900.00  Yes  30000.00  Lost Card None None
-5738 Mrs.Freeman,Allison,S 198 Main ST Winnipeg MB R3R1B5 CAN n.freman@anycorp.com noahfreman@gmail.com (1)-204-154-7589 (1) 204324-3459 EM1 Yes 900.00  Yes  30000.00  Lost Card None None

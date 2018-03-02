@@ -1,9 +1,9 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+// File One - accountmanager.java //
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 
@@ -13,7 +13,8 @@ import java.util.Scanner;
 
 public class accountmanager {
 
-// Variables for Calls //
+    // Variables for Calls //
+    static List<accountmanager> accList = new ArrayList<accountmanager>();
 
     // Variables for ID/Name //
     private int id;
@@ -32,11 +33,11 @@ public class accountmanager {
 
     private String Email;
     private String Phone;
+    private String CHQStatus;
+    private double CHQBal;
+    private String SAVStatus;
+    private double SAVBallance;
 
-    private String ChqEnabled;
-    private String ChqBal;
-    private String SavingEnabled;
-    private String SavBal;
 
     public void setId(int id) {
         this.id = id;
@@ -45,6 +46,7 @@ public class accountmanager {
     public String getNamePrefix() {
         return namepfx;
     } // Gets User's Honorific (Mr/Mrs/Ms)
+
     public void setNamePrefix(String pfx) {
         this.namepfx = pfx;
     } // Sets User's Honorific (Mr/Mrs/Ms)
@@ -52,6 +54,7 @@ public class accountmanager {
     public String getFirst() {
         return first;
     } // Gets Users First Name
+
     public void setFirst(String first) {
         this.first = first;
     } // Sets Users First Name
@@ -59,13 +62,15 @@ public class accountmanager {
     public String getLast() {
         return last;
     }  // Gets Users Last Name
-    public void setLast(String last){
+
+    public void setLast(String last) {
         this.last = last;
     } // Sets Users Last Name
 
     public String getMI() {
         return mi;
     } // Gets Users Middle Inital
+
     public void setMI(String mi) {
         this.mi = mi;
     } // Sets Users Middle Inital
@@ -73,6 +78,7 @@ public class accountmanager {
     public String getSFX() {
         return sfx;
     } // Gets Users Suffix (Ie. Jr, Sr)
+
     public void setSFX(String sfx) {
         this.sfx = sfx;
     } // Sets Users Suffix (Ie. Jr, Sr)
@@ -85,6 +91,7 @@ public class accountmanager {
     public String getBldgNum() {
         return BldgNum;
     } // Gets Address Number
+
     public void setBldgNum(String BldgNum) {
         this.BldgNum = BldgNum;
     } // Sets Address Number
@@ -92,111 +99,159 @@ public class accountmanager {
     public String getStreet() {
         return Street;
     } // Gets Address Number
+
     public void setStreet(String Street) {
         this.Street = Street;
-    } // Sets Address Number
+    } // Gets Address Number
+
 
     public String getCity() {
         return City;
-    } // Gets Address Number
+    }
+
     public void setCity(String City) {
         this.City = City;
+
     } // Sets Address Number
 
-    public String  getProv() {
+
+    public String getProv() {
         return Prov;
-    } // Gets Address Number
-    public void setProv(String Prov) {
-        this.Prov = Prov;
+    }
 
+    public void setProv(String prov) {
+        this.Prov = prov;
 
     } // Sets Address Number
-    public String getPostal(){
+
+
+    public String getPostal() {
         return Postal;
     }
-    public void setPostal(String Postal){
-        this.Postal = Postal;
+
+    public void setPostal(String postal) {
+        this.Postal = postal;
+
+    } // Sets Address Number
+
+    public String getEmail(){
+        return Email;
     }
+
+    public void setEmail(String email){
+        this.Email=email;
+
+    }
+
+
+    public String getPhone(){
+        return Email;
+    }
+
+    public void setPhone(String phone){
+        this.Phone=phone;
+    }
+
+
+    public void depositSavings(double amount){
+        SAVBallance += amount;
+    }
+
+    public void withdrawlSavings(double amount){
+        SAVBallance -= amount;
+    }
+
+    public void depositChecking(double amount){
+        CHQBal += amount;
+    }
+
+    public void withdrawlChecking(double amount){
+        CHQBal -= amount;
+    }
+
     // Variables for Accounts //
 
 
-    public String getEmail() {
-        return Email ;
-    }
-    public void setEmail(String Email){
-        this.Email=Email;
+    public double getCHQBal() {
+        return CHQBal;
     }
 
-    public String getPhone() {
-        return Phone ;
-    }
-    public void setPhone(String Phone){
-        this.Phone=Phone;
+    public void setCHQBal(double CHQBal) {
+        this.CHQBal = CHQBal;
     }
 
-    public String getChqEnabled() {
-        return ChqEnabled ;
-    }
-    public void setChqEnabled(String ChqEnabled){
-        this.ChqEnabled=ChqEnabled;
+    public double getSAVBallance(){
+        return SAVBallance;
     }
 
-    public String getChqBal() {
-        return ChqBal ;
-    }
-    public void setChqBal(String ChqBal){
-        this.ChqBal=ChqBal;
+    public void setSAVBallance(double SAVBallance){
+        this.SAVBallance=SAVBallance;
     }
 
-    public String getSavingEnabledE() {
-        return SavingEnabled ;
+    public static void loadCSV() {
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(new File("src/accountdata.csv"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Scanner dataScanner = null;
+        int index = 0;
+        accList = new ArrayList<accountmanager>();
+
+        while (scanner.hasNextLine()) {
+            dataScanner = new Scanner(scanner.nextLine());
+            dataScanner.useDelimiter(",");
+            accountmanager acc = new accountmanager();
+
+            try {
+                acc.setId(dataScanner.nextInt());
+                acc.setNamePrefix(dataScanner.next());
+                acc.setFirst(dataScanner.next());
+                acc.setLast(dataScanner.next());
+                acc.setMI(dataScanner.next());
+                acc.setSFX(dataScanner.next());
+                acc.setBldgNum(dataScanner.next());
+                acc.setStreet(dataScanner.next());
+                acc.setCity(dataScanner.next());
+                acc.setProv(dataScanner.next());
+                acc.setPostal(dataScanner.next());
+                acc.setEmail(dataScanner.next());
+                acc.setPhone(dataScanner.next());
+                double savings = dataScanner.nextDouble();
+                acc.depositSavings(savings);
+                double checking = dataScanner.nextDouble();
+                acc.depositChecking(checking);
+                acc.setCHQBal(dataScanner.nextDouble());
+                acc.setSAVBallance(dataScanner.nextDouble());
+
+            } catch (NoSuchElementException err) {
+                System.out.println("invalid data");
+            }
+
+            accList.add(acc);
+        }
+
+        scanner.close();
+
+        System.out.println(accList);
     }
-    public void setSavingEnabled(String SavingEnabled){
-        this.SavingEnabled=SavingEnabled;
-    }
-
-    public String getSavBal() {
-        return SavBal ;
-    }
-    public void setSavBal(String savBal){
-        this.SavBal=savBal;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     // Prints Output for Verification //
+    @Override
+    public String toString() {
+        return "\n Account Number=" + getId() + "\n Name: " + getNamePrefix() + getFirst() + " " + getMI() + ". " + getLast() + " " + getSFX() + "\n Address: " + getBldgNum() +" "+ getStreet()+","+getCity()+","+getProv()+","+getPostal()+"\n Contact Info: "+ "Email:"+getEmail()+" | Phone:"+getPhone()+"\n Accounts: CHQ|SAV" + getCHQBal()+"|"+ getSAVBallance();
+    }
 
 
+    public static accountmanager accountById(int id) {
+        for (int i = 0; i < accList.size(); i++) {
+            accountmanager am = accList.get(i);
+            if (am.getId() == id) {
 
-
-
-
-
-
-
-
-
-
-
-    // Prints Output for Verification //
-
-    public String toString(){
-        return "\nAccount Number="+getId()+" " + " " + getNamePrefix() + " " +getFirst()+" " +getMI()+". " +getLast()+ " " + getSFX() +" :ADR: " + getBldgNum()+" " + getStreet() +" " + getCity()+" " + getProv()+" " +getPostal()+" " +getEmail()+" " +getPhone()+" " +getChqEnabled()+" " +getChqBal()+" " +getSavingEnabledE()+" " +getSavBal();
+                return am;
+            }
+        }
+        return null;
     }
 }
-
-
-
-
-

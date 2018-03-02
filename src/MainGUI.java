@@ -35,14 +35,7 @@ public class MainGUI {
                 int n = 0;
                 if (accountnumber.equals("1")) {
                     JOptionPane.showMessageDialog(null, "Successes \n Record Found." ,"Bank System", JOptionPane.INFORMATION_MESSAGE);
-                    System.out.println("Search Btn" + accountnumber);
-//                    DisplayAcN.setText("Account Number:" + "\n" + accountnumber);
-//                    DisplayName.setText(accountmanager.getname());
-//                    Adr.setText(accountmanager.getadr());
-//                    Contact.setText(accountmanager.getcontact());
-//                    Notes.setText(accountmanager.nad());
-//                    System.out.println(accountmanager.reader());
-                   // System.out.println(accountmanager.Account.loadDataFromFile(null));
+
 
                 } else {
                     java.awt.Toolkit.getDefaultToolkit().beep();

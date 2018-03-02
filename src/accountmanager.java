@@ -30,6 +30,14 @@ public class accountmanager {
     private String Prov;
     private String Postal;
 
+    private String Email;
+    private String Phone;
+
+    private String ChqEnabled;
+    private String ChqBal;
+    private String SavingEnabled;
+    private String SavBal;
+
     public void setId(int id) {
         this.id = id;
     } // Sets User Account Number
@@ -100,17 +108,91 @@ public class accountmanager {
     } // Gets Address Number
     public void setProv(String Prov) {
         this.Prov = Prov;
-    } // Sets Address Number
 
+
+    } // Sets Address Number
+    public String getPostal(){
+        return Postal;
+    }
+    public void setPostal(String Postal){
+        this.Postal = Postal;
+    }
     // Variables for Accounts //
 
 
+    public String getEmail() {
+        return Email ;
+    }
+    public void setEmail(String Email){
+        this.Email=Email;
+    }
+
+    public String getPhone() {
+        return Phone ;
+    }
+    public void setPhone(String Phone){
+        this.Phone=Phone;
+    }
+
+    public String getChqEnabled() {
+        return ChqEnabled ;
+    }
+    public void setChqEnabled(String ChqEnabled){
+        this.ChqEnabled=ChqEnabled;
+    }
+
+    public String getChqBal() {
+        return ChqBal ;
+    }
+    public void setChqBal(String ChqBal){
+        this.ChqBal=ChqBal;
+    }
+
+    public String getSavingEnabledE() {
+        return SavingEnabled ;
+    }
+    public void setSavingEnabled(String SavingEnabled){
+        this.SavingEnabled=SavingEnabled;
+    }
+
+    public String getSavBal() {
+        return SavBal ;
+    }
+    public void setSavBal(String savBal){
+        this.SavBal=savBal;
+    }
 
 
-// Prints Output for Verification //
-    @Override
+
+
+
+
+
+
+
+
+
+
+
+
+    // Prints Output for Verification //
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Prints Output for Verification //
+
     public String toString(){
-        return "\nAccount Number="+getId()+":: Name:"+getNamePrefix() +getFirst()+" " +getMI()+". " +getLast()+ " " + getSFX() +" :ADR: " + getBldgNum()+ " "+ getStreet() + ", "+ getProv();
+        return "\nAccount Number="+getId()+" " + " " + getNamePrefix() + " " +getFirst()+" " +getMI()+". " +getLast()+ " " + getSFX() +" :ADR: " + getBldgNum()+" " + getStreet() +" " + getCity()+" " + getProv()+" " +getPostal()+" " +getEmail()+" " +getPhone()+" " +getChqEnabled()+" " +getChqBal()+" " +getSavingEnabledE()+" " +getSavBal();
     }
 }
 

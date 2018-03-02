@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class totext {
@@ -17,6 +18,30 @@ public class totext {
             dataScanner.useDelimiter(",");
             accountmanager emp = new accountmanager();
 
+            try {
+                emp.setId(dataScanner.nextInt());
+                emp.setNamePrefix(dataScanner.next());
+                emp.setFirst(dataScanner.next());
+                emp.setLast(dataScanner.next());
+                emp.setMI(dataScanner.next());
+                emp.setSFX(dataScanner.next());
+                emp.setBldgNum(dataScanner.next());
+                emp.setStreet(dataScanner.next());
+                emp.setCity(dataScanner.next());
+                emp.setProv(dataScanner.next());
+                emp.setPostal(dataScanner.next());
+                emp.setEmail(dataScanner.next());
+                emp.setPhone(dataScanner.next());
+                emp.setChqBal(dataScanner.next());
+                emp.setChqEnabled(dataScanner.next());
+                emp.setSavingEnabled(dataScanner.next());
+                emp.setSavBal(dataScanner.next());
+
+            } catch(NoSuchElementException err) {
+                System.out.println("invalid data");
+            }
+
+          /*
             while (dataScanner.hasNext()) {
                 String data = dataScanner.next();
 
@@ -37,15 +62,13 @@ public class totext {
                 // Sets Address Information
                 else if (index == 6)
                      emp.setBldgNum(data);
-                else if (index ==7)
-                     emp.setStreet(data);
-                else if (index ==8)
-                     emp.setProv(data);
                 else
                     System.out.println("invalid data::" + data);
                 index++;
             }
             index = 0;
+          */
+
             empList.add(emp);
         }
 

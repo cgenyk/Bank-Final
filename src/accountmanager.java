@@ -195,35 +195,34 @@ public class accountmanager {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        Scanner dataScanner = null;
-        int index = 0;
+        Scanner Scanner = null;
         accList = new ArrayList<accountmanager>();
 
         while (scanner.hasNextLine()) {
-            dataScanner = new Scanner(scanner.nextLine());
-            dataScanner.useDelimiter(",");
+            Scanner = new Scanner(scanner.nextLine());
+            Scanner.useDelimiter(",");
             accountmanager acc = new accountmanager();
 
             try {
-                acc.setId(dataScanner.nextInt());
-                acc.setNamePrefix(dataScanner.next());
-                acc.setFirst(dataScanner.next());
-                acc.setLast(dataScanner.next());
-                acc.setMI(dataScanner.next());
-                acc.setSFX(dataScanner.next());
-                acc.setBldgNum(dataScanner.next());
-                acc.setStreet(dataScanner.next());
-                acc.setCity(dataScanner.next());
-                acc.setProv(dataScanner.next());
-                acc.setPostal(dataScanner.next());
-                acc.setEmail(dataScanner.next());
-                acc.setPhone(dataScanner.next());
-                double savings = dataScanner.nextDouble();
+                acc.setId(Scanner.nextInt());
+                acc.setNamePrefix(Scanner.next());
+                acc.setFirst(Scanner.next());
+                acc.setLast(Scanner.next());
+                acc.setMI(Scanner.next());
+                acc.setSFX(Scanner.next());
+                acc.setBldgNum(Scanner.next());
+                acc.setStreet(Scanner.next());
+                acc.setCity(Scanner.next());
+                acc.setProv(Scanner.next());
+                acc.setPostal(Scanner.next());
+                acc.setEmail(Scanner.next());
+                acc.setPhone(Scanner.next());
+                double savings = Scanner.nextDouble();
                 acc.depositSavings(savings);
-                double checking = dataScanner.nextDouble();
+                double checking = Scanner.nextDouble();
                 acc.depositChecking(checking);
-                acc.setCHQBal(dataScanner.nextDouble());
-                acc.setSAVBallance(dataScanner.nextDouble());
+                acc.setCHQBal(Scanner.nextDouble());
+                acc.setSAVBallance(Scanner.nextDouble());
 
             } catch (NoSuchElementException err) {
                 System.out.println("invalid data");

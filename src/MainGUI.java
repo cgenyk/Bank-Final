@@ -16,6 +16,7 @@ public class MainGUI {
     public JPanel panel1;
     private JPanel MAIN;
     private JTextPane textPane1;
+    private JTextField WDAMt;
 
     public MainGUI() {
 
@@ -34,10 +35,10 @@ public class MainGUI {
 
             }
         });
-        depositToSavingsAcctButton.addActionListener(new ActionListener() {
+        depositToSavingsAcctButton.addActionListener(new ActionListener() { // Deposit Savings
             @Override
             public void actionPerformed(ActionEvent e) {
-                //accountmanager.accountById(accountmanager.depositSavings);
+               // accountmanager.depositSavings;
 
             }
         });

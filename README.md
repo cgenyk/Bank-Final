@@ -1,3 +1,11 @@
+---
+Version: Beta
+Notes: None
+---
+
+
+
+# Bank-Final
 # [](#header-1)Assignment 4
 * * *
 Welcome to my page for Assignment 4. 
@@ -20,3 +28,4 @@ There are numerious preset user accounts in this software to be called they are.
 
 * * *
 Thats all I have to say.
+GitHub Pages URL: https://cgenyk.github.io/Bank-Final/

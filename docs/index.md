@@ -6,10 +6,6 @@ As well as veiw important information for the project such as account numbers an
 * * * 
 # [](#header-1)Important Information:
 * * *
-You will need a defualt password to use the software, the password is.
-```js
-Password
-```
 There are numerious preset user accounts in this software to be called they are...
 
 | Account Number| Name        
@@ -21,3 +17,6 @@ There are numerious preset user accounts in this software to be called they are.
 | 5          | Mr. Bill Gates |
 | 6          | Mr. Elon Musk|
 | 7          | Mr. Mark Zuckerburg|
+
+* * *
+Thats all I have to say.

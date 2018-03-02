@@ -19,6 +19,8 @@ public class totext {
 
             while (dataScanner.hasNext()) {
                 String data = dataScanner.next();
+
+                // Sets Data for Name and ID Fields
                 if (index == 0)
                     emp.setId(Integer.parseInt(data));
                 else if (index == 1)
@@ -28,7 +30,17 @@ public class totext {
                 else if (index == 3)
                     emp.setLast(data);
                 else if (index == 4)
-                    emp.setBldgNum(data);
+                    emp.setMI(data);
+                else if (index == 5)
+                    emp.setSFX(data);
+
+                // Sets Address Information
+                else if (index == 6)
+                     emp.setBldgNum(data);
+                else if (index ==7)
+                     emp.setStreet(data);
+                else if (index ==8)
+                     emp.setProv(data);
                 else
                     System.out.println("invalid data::" + data);
                 index++;
